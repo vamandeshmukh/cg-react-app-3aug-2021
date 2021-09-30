@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.css';
+import Sample from './Sample';
 
 const App = () => {
   return (
     <div className="App">
       <h1>React app</h1>
       <p>This is a React app.</p>
+      <Sample />
     </div>
   );
 }
+
 export default App;
 
 // import logo from './logo.svg';
