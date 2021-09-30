@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import '../App.css';
@@ -22,7 +23,13 @@ const JavaData = (props) => {
 
     const submitAddEmp = (evt) => {
         console.log("submitEmpData");
-
+        axios.post('http://localhost:8082/addEmp', emp)
+            .then((response) => {
+                console.log(response.data);
+                console.log(response.headers);
+            }).catch((error) => {
+                console.log(error.message);
+            })
         evt.preventDefault();
     }
 
