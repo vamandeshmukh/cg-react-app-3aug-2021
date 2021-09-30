@@ -26,12 +26,11 @@ const JavaData = (props) => {
         console.log("submitEmpData");
         axios.post('http://localhost:8082/addEmp', emp)
             .then((response) => {
-                setEmpList(response.data);
-                console.log(response.data);
-                console.log(response.headers);
-            }).catch((error) => {
-                console.log(error.message);
+                setEmp(response.data);
+            }).catch(error => {
+                console.log(error.message)
             });
+
         evt.preventDefault();
     }
 
@@ -51,12 +50,14 @@ const JavaData = (props) => {
             <p>This is java data component.</p>
             <div>
                 <p>Add a new Employee</p>
-                <form onSubmit={submitAddEmp} >
+                <form className="form formGroup" onSubmit={submitAddEmp} >
                     <div>
                         <input
                             type="text"
                             id="firstName"
                             name="firstName"
+                            className="form-control mb-3"
+                            value={emp.firstName}
                             placeholder="First Name"
                             onChange={handleEmpData}
                         />
@@ -64,6 +65,7 @@ const JavaData = (props) => {
                             type="number"
                             id="salary"
                             name="salary"
+                            className="form-control mb-3"
                             placeholder="Salary"
                             onChange={handleEmpData}
                         />
@@ -71,7 +73,8 @@ const JavaData = (props) => {
                             type="submit"
                             id="submit"
                             name="submit"
-                            value="submit"
+                            className="btn btn-primary mb-3"
+                            value="Add Employee"
                         />
                     </div>
                 </form>
@@ -84,20 +87,11 @@ const JavaData = (props) => {
                         type="submit"
                         id="submit"
                         name="submit"
-                        value="submit"
+                        className="btn btn-primary"
+                        value="Get All Emps"
                         onClick={getAllEmp}
                     />
                 </div>
-                {/* <div>
-                    {
-                        () => {
-                            let header = Object.keys(empList.Object)
-                            return header.map((key, index) => {
-                                return <th key={index}>{key}</th>
-                            })
-                        }
-                    }
-                </div> */}
                 <div className="Container text-left">
                     <div>
                         <p>EID FIRST NAME SALARY</p>
