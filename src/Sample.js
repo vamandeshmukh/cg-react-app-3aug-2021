@@ -10,7 +10,7 @@ import './App.css';
 //     return (
 //         <div className="App">
 //             <h1>Sample Component</h1>
-//             <p>This is a sample component.</p>
+//             <p>This is sample component.</p>
 //         </div>
 //     );
 // }
@@ -18,6 +18,7 @@ import './App.css';
 
 // 2.  example of class component 
 class Sample extends React.Component {
+
     constructor() {
         super();
     }
@@ -26,7 +27,7 @@ class Sample extends React.Component {
         return (
             <div className="App">
                 <h1>Sample Component</h1>
-                <p>This is a sample component.</p>
+                <p>This is sample component.</p>
             </div>
         );
     }
