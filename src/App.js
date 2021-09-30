@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
+import JavaData from './components/JavaData';
 import Login from './components/Login';
 import Register from './components/Register';
 import Sample from './components/Sample';
@@ -10,6 +11,7 @@ const App = () => {
     <div className="App">
       <h1>App Component</h1>
       <p>This is App component.</p>
+      <JavaData/>
       <Sample firstName="Sonu" salary="25000"/>
     </div>
   );
