@@ -5,6 +5,7 @@ import '../App.css';
 
 const JavaData = (props) => {
 
+    const [empList, setEmpList] = useState([]);
     const [emp, setEmp] = useState(
         {
             eid: 0,
@@ -29,8 +30,17 @@ const JavaData = (props) => {
                 console.log(response.headers);
             }).catch((error) => {
                 console.log(error.message);
-            })
+            });
         evt.preventDefault();
+    }
+
+    const getAllEmp = () => {
+        axios.get('http://localhost:8082/getAllEmp')
+            .then((response) => {
+                setEmpList(response.data);
+            }).catch(error => {
+                console.log(error.message)
+            });
     }
 
     return (
@@ -70,10 +80,21 @@ const JavaData = (props) => {
                         />
                     </div>
                 </form>
+                <p> {emp.eid} {emp.firstName} {emp.salary} </p>
             </div>
-            <p> {emp.eid} </p>
-            <p> {emp.firstName} </p>
-            <p> {emp.salary} </p>
+            <div>
+                <p>Get All Employees' Data</p>
+                <div>
+                    <input
+                        type="submit"
+                        id="submit"
+                        name="submit"
+                        value="submit"
+                        onClick={getAllEmp}
+                    />
+                </div>
+                <div> {empList.map(e => <p> {e.eid}, {e.firstName} {e.salary} </p>)} </div>
+            </div>
         </div>
     );
 }
