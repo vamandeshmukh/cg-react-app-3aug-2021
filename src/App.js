@@ -7,9 +7,12 @@ const App = () => {
     <div className="App">
       <h1>React app</h1>
       <p>This is a React app.</p>
+      <p>Some text</p>
+      <Sample />
+      <Sample />
       <Sample />
     </div>
-  );
+      );
 }
 
 export default App;
