@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
-import Sample from './Sample';
+import Sample from './components/Sample';
 
 const App = () => {
   return (
