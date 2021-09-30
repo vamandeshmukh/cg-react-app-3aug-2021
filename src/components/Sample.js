@@ -12,6 +12,7 @@ class Sample extends React.Component {
             <div className="App">
                 <h1>Sample Component</h1>
                 <p>This is sample component.</p>
+                <p> {console.log("JS in JSX")} </p>
                 <p>{new Date().toLocaleDateString('en-IN')}</p>
                 <p>{new Date().toLocaleDateString('mr-IN')}</p>
             </div>
