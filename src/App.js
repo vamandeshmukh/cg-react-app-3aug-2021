@@ -9,7 +9,7 @@ import Sample from './components/Sample';
 const App = () => {
   return (
     <div className="container" >
-      <h1>App Component</h1>
+      <h1 className="display-4 text-primary">App Component</h1>
       <p>This is App component.</p>
       <JavaData/>
     </div>

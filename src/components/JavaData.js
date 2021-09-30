@@ -34,7 +34,7 @@ const JavaData = (props) => {
         evt.preventDefault();
     }
 
-    const getAllEmp = (evt) => {
+    const submitAllEmp = (evt) => {
         axios.get('http://localhost:8082/getAllEmp')
             .then((response) => {
                 setEmpList(response.data);
@@ -50,7 +50,7 @@ const JavaData = (props) => {
             <p>This is java data component.</p>
             <div>
                 <p>Add a new Employee</p>
-                <form className="form formGroup" onSubmit={submitAddEmp} >
+                <form className="form form-group row" onSubmit={submitAddEmp} >
                     <div>
                         <input
                             type="text"
@@ -87,9 +87,9 @@ const JavaData = (props) => {
                         type="submit"
                         id="submit"
                         name="submit"
-                        className="btn btn-primary"
+                        className="btn btn-primary mb-3"
                         value="Get All Emps"
-                        onClick={getAllEmp}
+                        onClick={submitAllEmp}
                     />
                 </div>
                 <div className="Container text-left">
