@@ -26,6 +26,7 @@ const JavaData = (props) => {
         console.log("submitEmpData");
         axios.post('http://localhost:8082/addEmp', emp)
             .then((response) => {
+                setEmpList(response.data);
                 console.log(response.data);
                 console.log(response.headers);
             }).catch((error) => {
@@ -34,17 +35,18 @@ const JavaData = (props) => {
         evt.preventDefault();
     }
 
-    const getAllEmp = () => {
+    const getAllEmp = (evt) => {
         axios.get('http://localhost:8082/getAllEmp')
             .then((response) => {
                 setEmpList(response.data);
             }).catch(error => {
                 console.log(error.message)
             });
+        evt.preventDefault();
     }
 
     return (
-        <div className="App">
+        <div>
             <h1>Java Data Component</h1>
             <p>This is java data component.</p>
             <div>
@@ -52,24 +54,17 @@ const JavaData = (props) => {
                 <form onSubmit={submitAddEmp} >
                     <div>
                         <input
-                            type="number"
-                            id="eid"
-                            name="eid"
-                            value={emp.eid}
-                            onChange={handleEmpData}
-                        />
-                        <input
                             type="text"
                             id="firstName"
                             name="firstName"
-                            value={emp.firstName}
+                            placeholder="First Name"
                             onChange={handleEmpData}
                         />
                         <input
                             type="number"
                             id="salary"
                             name="salary"
-                            value={emp.salary}
+                            placeholder="Salary"
                             onChange={handleEmpData}
                         />
                         <input
@@ -93,7 +88,29 @@ const JavaData = (props) => {
                         onClick={getAllEmp}
                     />
                 </div>
-                <div> {empList.map(e => <p> {e.eid}, {e.firstName} {e.salary} </p>)} </div>
+                {/* <div>
+                    {
+                        () => {
+                            let header = Object.keys(empList.Object)
+                            return header.map((key, index) => {
+                                return <th key={index}>{key}</th>
+                            })
+                        }
+                    }
+                </div> */}
+                <div className="Container text-left">
+                    <div>
+                        <p>EID FIRST NAME SALARY</p>
+                    </div>
+                    {empList.map((e, k) => {
+                        console.log(e);
+                        return (
+                            <div k={k}>
+                                {e.eid}  {e.firstName} {e.salary}
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     );

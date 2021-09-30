@@ -8,7 +8,7 @@ import Sample from './components/Sample';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="container" >
       <h1>App Component</h1>
       <p>This is App component.</p>
       <JavaData/>
