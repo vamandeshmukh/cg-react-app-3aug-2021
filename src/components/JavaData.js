@@ -6,12 +6,9 @@ const JavaData = (props) => {
 
     const [emp, setEmp] = useState(
         {
-            firstName: "Monu",
-            salary: 10000,
-            phones: {
-                officePhone: 23456789,
-                mobile: 9876543210
-            }
+            eid: 0,
+            firstName: '',
+            salary: 0
         }
     );
 
@@ -23,40 +20,53 @@ const JavaData = (props) => {
         });
     }
 
-    const submitEmpData = (evt) => {
+    const submitAddEmp = (evt) => {
         console.log("submitEmpData");
-        setEmp({
-            ...emp,
-            [evt.target.name]: evt.target.value
-        });
+
         evt.preventDefault();
     }
 
     return (
         <div className="App">
-            <h1>Sample Component</h1>
-            <p>This is sample component.</p>
+            <h1>Java Data Component</h1>
+            <p>This is java data component.</p>
             <div>
-                <form onSubmit={submitEmpData} >
-                    <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={emp.firstName}
-                        onChange={handleEmpData}
-                    />
-                    <input
-                        type="submit"
-                        id="submit"
-                        name="submit"
-                        value="submit"
-                    />
+                <p>Add a new Employee</p>
+                <form onSubmit={submitAddEmp} >
+                    <div>
+                        <input
+                            type="number"
+                            id="eid"
+                            name="eid"
+                            value={emp.eid}
+                            onChange={handleEmpData}
+                        />
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            value={emp.firstName}
+                            onChange={handleEmpData}
+                        />
+                        <input
+                            type="number"
+                            id="salary"
+                            name="salary"
+                            value={emp.salary}
+                            onChange={handleEmpData}
+                        />
+                        <input
+                            type="submit"
+                            id="submit"
+                            name="submit"
+                            value="submit"
+                        />
+                    </div>
                 </form>
             </div>
+            <p> {emp.eid} </p>
             <p> {emp.firstName} </p>
-            <p> {emp.phones.mobile} </p>
-            <p> {props.firstName} </p>
-            <p> {props.salary} </p>
+            <p> {emp.salary} </p>
         </div>
     );
 }
