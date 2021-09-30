@@ -10,10 +10,7 @@ const App = () => {
     <div className="App">
       <h1>App Component</h1>
       <p>This is App component.</p>
-      <Header />
-      <Sample />
-      <Register />
-      <Login />
+      <Sample firstName="Sonu" salary="25000"/>
     </div>
   );
 }
