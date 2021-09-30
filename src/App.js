@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
+import Login from './components/Login';
+import Register from './components/Register';
 import Sample from './components/Sample';
 
 const App = () => {
@@ -10,6 +12,8 @@ const App = () => {
       <p>This is App component.</p>
       <Header />
       <Sample />
+      <Register />
+      <Login />
     </div>
   );
 }
