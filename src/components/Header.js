@@ -6,11 +6,11 @@ const Header = () => {
 
     return (
         <div>
-            <Link to="/home">Home</Link>
-            <Link to="/sample">Sample</Link>
-            <Link to="/javadata">JavaData</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+            <Link to="/home">Home </Link>
+            <Link to="/sample">Sample </Link>
+            <Link to="/javadata">JavaData </Link>
+            <Link to="/login">Login </Link>
+            <Link to="/register">Register </Link>
 
         </div>
 
