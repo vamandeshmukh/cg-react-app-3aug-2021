@@ -30,11 +30,10 @@ const JavaData = (props) => {
             }).catch(error => {
                 console.log(error.message)
             });
-
         evt.preventDefault();
     }
 
-    const submitAllEmp = (evt) => {
+    const submitGetAllEmp = (evt) => {
         axios.get('http://localhost:8082/getAllEmp')
             .then((response) => {
                 setEmpList(response.data);
@@ -89,7 +88,7 @@ const JavaData = (props) => {
                         name="submit"
                         className="btn btn-primary mb-3"
                         value="Get All Emps"
-                        onClick={submitAllEmp}
+                        onClick={submitGetAllEmp}
                     />
                 </div>
                 <div className="Container text-left">
