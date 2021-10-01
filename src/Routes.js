@@ -7,12 +7,13 @@ import Register from './components/Register';
 import Sample from './components/Sample';
 import PageNotFound from './components/PageNotFound';
 import Home from './components/Home';
+import Footer from './components/Footer';
 const Routes = () => {
     return (
         <div>
             <Router>
                 <div>
-                    <Header></Header>
+                    <Header />
                     <div>
                         <Switch>
                             <Route exact path="/"> <Home /> </Route>
@@ -24,8 +25,8 @@ const Routes = () => {
                             <Route path="/*"> <PageNotFound /> </Route>
                         </Switch>
                     </div>
+                    <Footer />
                 </div>
-
             </Router>
         </div>
     );
