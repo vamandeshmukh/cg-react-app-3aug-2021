@@ -38,37 +38,6 @@ const Header = () => {
         </header>
     );
 
-
-
-
-    // return (
-    //     <div>
-    //         <nav className="navbar navbar-expand-lg navbar-dark  bg-dark">
-    //             <Link className="navbar-brand" to="/home">
-    //                 <img src="https://www.capgemini.com/wp-content/themes/capgemini-komposite/assets/images/logo.svg"
-    //                     height="24px" alt="Capgemini" />
-    //             </Link>
-    //             <ul className="navbar-nav">
-
-    //                 <li className="nav-item">
-    //                     <Link className="nav-link" to="/sample" >Sample</Link>
-    //                 </li>
-    //                 <li className="nav-item">
-    //                     <Link className="nav-link" to="/javadata" >JavaData</Link>
-    //                 </li>
-    //                 <li className="nav-item">
-    //                     <Link className="nav-link" to="/login">Login</Link>
-    //                 </li>
-    //                 <li className="nav-item align-end">
-    //                     {/* align right this item  */}
-    //                     <Link className="nav-link" to="/register">Register</Link>
-    //                 </li>
-
-    //             </ul>
-    //         </nav>
-    //     </div>
-    // );
-
     // return (
     //     <div>
     //         <Link to="/home">Home </Link>
