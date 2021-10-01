@@ -3,8 +3,8 @@ import '../App.css';
 
 const Login = () => {
     return (
-        <div className="App">
-            <h1>Login Component</h1>
+        <div className="container" >
+            <h1 className="display-4 text-primary">Login Component</h1>
             <p>This is login component.</p>
         </div>
     );

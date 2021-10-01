@@ -33,8 +33,8 @@ const Sample = (props) => {
     }
 
     return (
-        <div className="App">
-            <h1>Sample Component</h1>
+        <div className="container" >
+            <h1 className="display-4 text-primary">Sample Component</h1>
             <p>This is sample component.</p>
             <div>
                 <form onSubmit={submitEmpData} >

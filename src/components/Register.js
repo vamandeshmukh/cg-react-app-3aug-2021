@@ -3,8 +3,8 @@ import '../App.css';
 
 const Register = () => {
     return (
-        <div className="App">
-            <h1>Register Component</h1>
+        <div className="container" >
+            <h1 className="display-4 text-primary">Register Component</h1>
             <p>This is register component.</p>
         </div>
     );

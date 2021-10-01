@@ -44,8 +44,8 @@ const JavaData = (props) => {
     }
 
     return (
-        <div>
-            <h1>Java Data Component</h1>
+        <div className="container" >
+            <h1 className="display-4 text-primary">Java Data Component</h1>
             <p>This is java data component.</p>
             <div>
                 <p>Add a new Employee</p>
