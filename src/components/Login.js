@@ -37,7 +37,7 @@ const Login = (props) => {
         //         localStorage.setItem('token', response.data);
         //         console.log(response.data);
         //         if (response.data !== 'thisIsNotTheValidToken')
-        //             history.push('/empdata');
+                    history.push('/home');
         //     }).catch((error) => {
         //         console.log(error.message)
         //     });
@@ -45,10 +45,10 @@ const Login = (props) => {
     }
     return (
         <div className="container">
-            <h1 className="display-4 text-primary">Login Component</h1>
-            <div className="row">
-                <form className="form form-group form-dark col-sm-6 mt-3" onSubmit={submitAppUser}>
-                    <div className="row mb-3">
+            <h1 className="display-4 text-primary">Login</h1>
+            <div>
+                <form className="form form-group form-dark row mt-3" onSubmit={submitAppUser}>
+                    <div className="mb-3">
                         <input
                             type="text"
                             className="form-control"

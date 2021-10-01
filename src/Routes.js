@@ -25,7 +25,7 @@ const Routes = () => {
                             <Route path="/*"> <PageNotFound /> </Route>
                         </Switch>
                     </div>
-                    <Footer />
+                    {/* <Footer /> */}
                 </div>
             </Router>
         </div>
