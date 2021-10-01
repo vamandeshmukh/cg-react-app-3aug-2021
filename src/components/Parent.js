@@ -6,7 +6,7 @@ const Parent = () => {
     const [childEmp, setChildEmp] = useState({}); // from callback 
 
     useEffect(() => {
-
+        console.log('Parent useEffect');
         setParentEmp({
             name: 'Monu',
             salary: 20.5
@@ -15,8 +15,8 @@ const Parent = () => {
     }, []);
 
     const handleCallback = (childEmpData) => {
+        console.log('Parent handleCallback');
         setChildEmp(childEmpData);
-        console.log(childEmpData);
     }
 
 

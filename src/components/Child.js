@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
+
 const Child = (props) => {
 
     const [childEmp, setChildEmp] = useState({}); // child state   
 
     useEffect(() => {
+        console.log('Child useEffect');
         setChildEmp({
             name: 'Tonu',
             salary: 30.5
@@ -13,7 +15,7 @@ const Child = (props) => {
     }, []);
 
     const onTrigger = () => {
-        
+        console.log('Child onTrigger');
         props.parentCallback(childEmp);
     };
 
