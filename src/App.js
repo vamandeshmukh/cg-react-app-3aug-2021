@@ -5,13 +5,14 @@ import JavaData from './components/JavaData';
 import Login from './components/Login';
 import Register from './components/Register';
 import Sample from './components/Sample';
+import Routes from './Routes';
 
 const App = () => {
   return (
     <div className="container" >
       <h1 className="display-4 text-primary">App Component</h1>
       <p>This is App component.</p>
-      <JavaData/>
+      <Routes />
     </div>
   );
 }
