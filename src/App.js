@@ -1,20 +1,13 @@
 import React from 'react';
-import './App.css';
-import Header from './components/Header';
-import JavaData from './components/JavaData';
-import Login from './components/Login';
-import Register from './components/Register';
-import Sample from './components/Sample';
 import Routes from './Routes';
 
 const App = () => {
   return (
-    <div className="container" >
+    <div>
       <Routes />
     </div>
   );
 }
-
 export default App;
 
 // import logo from './logo.svg';
