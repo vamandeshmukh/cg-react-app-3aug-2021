@@ -25,6 +25,9 @@ const Header = () => {
                                 <Link className="nav-link" to="/javadata" >JavaData</Link>
                             </li>
                             <li className="nav-item">
+                                <Link className="nav-link" to="/mymedia" >My Media</Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/login">Login</Link>
                             </li>
                             <li className="nav-item align-end">
