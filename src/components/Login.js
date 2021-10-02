@@ -32,15 +32,13 @@ const Login = (props) => {
     const submitAppUser = (event) => {
         console.log(AppUser.email);
         console.log(AppUser.password);
-        // axios.post(`http://localhost:8082/login`, AppUser)
+        // axios.post(`http://localhost:8082/appuser/login`, AppUser)
         //     .then((response) => {
-        //         localStorage.setItem('token', response.data);
         //         console.log(response.data);
-        //         if (response.data !== 'thisIsNotTheValidToken')
                     history.push('/home');
-        //     }).catch((error) => {
-        //         console.log(error.message)
-        //     });
+            // }).catch((error) => {
+            //     console.log(error.message)
+            // });
         event.preventDefault();
     }
     return (

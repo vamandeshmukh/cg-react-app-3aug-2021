@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
+import axios from "axios";
 
 const Register = (props) => {
     const history = useHistory();
 
-    const [AppUser, setAppUser] = useState({
-        userName: '',
-        email: '',
-        password: ''
-    });
+    const [appUser, setAppUser] = useState({});
 
     useEffect(
         () => {
             setAppUser({
+                userId: 0,
                 email: '',
                 password: ''
             }
@@ -22,22 +20,27 @@ const Register = (props) => {
     const handleAppUser = (event) => {
         console.log(event.target.value);
         setAppUser({
-            ...AppUser,
+            ...appUser,
             [event.target.name]: event.target.value
         });
     };
 
-    const submitAppUser = async (event) => {
-        console.log(AppUser.email);
-        console.log(AppUser.password);
-        // await 
-        history.push('/login');
-        // await axios.post(`http://localhost:8082/register`, AppUser)
-        //     .then((response) => {
-        //         console.log(response.data);
-        //     }).catch((error) => {
-        //         console.log(error.message)
-        //     });
+    const submitAppUser = (event) => {
+        console.log(appUser.email);
+        console.log(appUser.password);
+        const config = {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Accept': 'application/json'
+            }
+        };
+        axios.post(`http://localhost:8082/appuser/register`, appUser, config)
+            .then((response) => {
+                console.log(response.data);
+                history.push('/login');
+            }).catch((error) => {
+                console.log(error.message)
+            });
         event.preventDefault();
     }
     return (
@@ -47,21 +50,12 @@ const Register = (props) => {
                 <form className="form form-group form-dark row mt-3" onSubmit={submitAppUser}>
                     <div className="mb-3">
                         <input
-                            type="text"
-                            name="userName"
-                            id="userName"
-                            className="form-control mb-3"
-                            placeholder="Username"
-                            value={AppUser.userName}
-                            onChange={handleAppUser}
-                        />
-                        <input
                             type="email"
                             name="email"
                             id="email"
                             className="form-control mb-3"
                             placeholder="Email"
-                            value={AppUser.email}
+                            value={appUser.email}
                             onChange={handleAppUser}
                         />
                         <input
@@ -70,7 +64,7 @@ const Register = (props) => {
                             id="password"
                             className="form-control mb-3"
                             placeholder="Password"
-                            value={AppUser.password}
+                            value={appUser.password}
                             onChange={handleAppUser} />
                         <input
                             type="submit"
