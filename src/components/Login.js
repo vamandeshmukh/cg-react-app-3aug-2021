@@ -56,6 +56,7 @@ const Login = (props) => {
                             placeholder="Email"
                             value={AppUser.email}
                             onChange={handleAppUser}
+                            required
                         />
                         <input
                             type="password"
@@ -66,6 +67,7 @@ const Login = (props) => {
                             placeholder="Password"
                             value={AppUser.password}
                             onChange={handleAppUser} />
+                            required
                         <input
                             type="submit"
                             id="submit"
