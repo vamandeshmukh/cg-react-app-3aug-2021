@@ -7,7 +7,7 @@ const LoginControl = (props) => {
 
   useEffect(() => {
     setIsLoggedIn(false);
-    setDisplayElement('Please login to this app');
+    setDisplayElement('Please login to this app.');
     setClickText('Click Here');
   }, []);
 
