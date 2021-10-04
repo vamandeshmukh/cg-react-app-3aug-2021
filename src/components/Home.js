@@ -9,8 +9,8 @@ const Home = () => {
             <h1 className="display-4 text-primary">Home Component</h1>
             <p>Welcome to this app!</p>
             {/* <Parent /> */}
-            <LoginControl />
-            {/* <BsStuff /> */}
+            {/* <LoginControl /> */}
+            <BsStuff />
         </div>
     );
 }

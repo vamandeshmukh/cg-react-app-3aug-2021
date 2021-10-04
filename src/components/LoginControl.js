@@ -9,7 +9,7 @@ const LoginControl = (props) => {
     setIsLoggedIn(false);
     setDisplayElement('Please login to this app.');
     setClickText('Click Here');
-  }, []);
+  }, []); // second arg [] is provided to prevent infinite loop 
 
   const handleLoginClick = () => {
     setIsLoggedIn(!isLoggedIn);
