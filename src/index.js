@@ -2,10 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import store from './redux/store';
+import { Provider } from 'react-redux';
+// import reportWebVitals from './reportWebVitals';
 
-import reportWebVitals from './reportWebVitals';
+// guide for StrictMode: https://reactjs.org/docs/strict-mode.html 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+    , document.getElementById('root'));
 
 // reportWebVitals();
 

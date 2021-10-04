@@ -2,6 +2,9 @@ import React from 'react';
 import Parent from './Parent';
 import LoginControl from './LoginControl';
 import BsStuff from './BsStuff';
+import  Counter from '../redux/counter/Counter';
+import Emp from '../redux/counter2/Counter2';
+import Counter2 from '../redux/counter2/Counter2';
 
 const Home = () => {
     return (
@@ -10,7 +13,11 @@ const Home = () => {
             <p>Welcome to this app!</p>
             {/* <Parent /> */}
             {/* <LoginControl /> */}
-            <BsStuff />
+            {/* <BsStuff /> */}
+            <Counter />
+            <p> </p>
+            <Counter2 />
+            {/* <Emp /> */}
         </div>
     );
 }

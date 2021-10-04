@@ -1,18 +1,35 @@
 import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import '../App.css';
 
 const JavaData = (props) => {
 
     const [empList, setEmpList] = useState([]);
-    const [emp, setEmp] = useState(
-        {
-            eid: 0,
-            firstName: '',
-            salary: 0
-        }
-    );
+    const [emp, setEmp] = useState({
+        eid: 0,
+        firstName: '',
+        salary: 0
+    });
+    const [oneEmp, setOneEmp] = useState({
+        eid: 0,
+        firstName: '',
+        salary: 0
+    });
+
+    // useEffect(() => {
+    //     setEmp(
+    //         {
+    //             eid: 0,
+    //             firstName: '',
+    //             salary: 0
+    //         }
+    //     );
+    //     setOneEmp({
+    //         eid: 0,
+    //         firstName: '',
+    //         salary: 0
+    //     });
+    // }, []);
 
     const handleEmpData = (evt) => {
         console.log("handleEmpData", evt.target.name, evt.target.value);
@@ -22,17 +39,35 @@ const JavaData = (props) => {
         });
     }
 
+    const handleOneEmpData = (evt) => {
+        console.log("handleOneEmpData", evt.target.name, evt.target.value);
+        setOneEmp({
+            ...emp,
+            [evt.target.name]: evt.target.value
+        });
+    }
+
     const submitAddEmp = (evt) => {
         console.log("submitEmpData");
         axios.post('http://localhost:8082/addEmp', emp)
             .then((response) => {
-                setEmp(response.data);
+                setOneEmp(response.data);
+            }).catch(error => {
+                console.log(error.message);
+            });
+        evt.preventDefault();
+    }
+
+    const submitGetEmpById = (evt) => {
+        console.log("submitGetEmpById");
+        axios.get(`http://localhost:8082/getEmp/${oneEmp.eid}`)
+            .then((response) => {
+                setOneEmp(response.data);
             }).catch(error => {
                 console.log(error.message)
             });
         evt.preventDefault();
     }
-
     const submitGetAllEmp = (evt) => {
         axios.get('http://localhost:8082/getAllEmp')
             .then((response) => {
@@ -79,6 +114,31 @@ const JavaData = (props) => {
                 </form>
                 <p> {emp.eid} {emp.firstName} {emp.salary} </p>
             </div>
+            <div>
+                <p>Get Employee by Eid</p>
+                <form className="form form-group row border border-primary pt-3 pb-3 px-3 py-3" onSubmit={submitGetEmpById} >
+                    <div>
+                        <input
+                            type="number"
+                            id="eid"
+                            name="eid"
+                            className="form-control mb-3"
+                            value={oneEmp.eid}
+                            placeholder="Employee Id"
+                            onChange={handleOneEmpData}
+                        />
+                        <input
+                            type="submit"
+                            id="submit"
+                            name="submit"
+                            className="btn btn-primary mb-3"
+                            value="Get Employee"
+                        />
+                    </div>
+                </form>
+                <p> {oneEmp.eid} {oneEmp.firstName} {oneEmp.salary} </p>
+            </div>
+
             <div>
                 <p>Get All Employees' Data</p>
                 <div>
