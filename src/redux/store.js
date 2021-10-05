@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './counter/CounterSlice';
 import counter2Reducer from './counter2/Counter2Slice';
 import empReducer from './EmpSlice';
-
+import reduxDemoReducer from './ReduxDemoSlice';
 // Steps - 
 // 1. Create store (only one)
 // 2. Provide store to index.js 
@@ -32,7 +32,8 @@ const store = configureStore({
     reducer: {
         counter: counterReducer,
         counter2: counter2Reducer,
-        emp: empReducer
+        emp: empReducer,
+        reduxDemo: reduxDemoReducer
     },
 })
 export default store;
