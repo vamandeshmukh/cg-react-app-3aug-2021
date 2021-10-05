@@ -4,8 +4,8 @@ import { decrement, increment } from './Counter2Slice';
 
 const Counter2 = () => {
     console.log('2 Counter2');
-    const count2 = useSelector((state) => state.counter.value);
-    const count = useSelector((state) => state.counter2.value);
+    const count2 = useSelector((state) => state.counter2.value);
+    const count = useSelector((state) => state.counter.value);
     const dispatch = useDispatch();
 
 

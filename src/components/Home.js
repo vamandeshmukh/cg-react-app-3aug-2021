@@ -15,9 +15,9 @@ const Home = () => {
             {/* <Parent /> */}
             {/* <LoginControl /> */}
             {/* <BsStuff /> */}
-            <Counter />
+            {/* <Counter /> */}
             <p> </p>
-            <Counter2 />
+            {/* <Counter2 /> */}
             {/* <Emp /> */}
             <ReduxDemo />
         </div>
