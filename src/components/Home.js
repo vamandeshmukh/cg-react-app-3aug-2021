@@ -3,8 +3,9 @@ import Parent from './Parent';
 import LoginControl from './LoginControl';
 import BsStuff from './BsStuff';
 import  Counter from '../redux/counter/Counter';
-import Emp from '../redux/counter2/Counter2';
+import Emp from './Emp';
 import Counter2 from '../redux/counter2/Counter2';
+import ReduxDemo from './ReduxDemo';
 
 const Home = () => {
     return (
@@ -14,10 +15,11 @@ const Home = () => {
             {/* <Parent /> */}
             {/* <LoginControl /> */}
             {/* <BsStuff /> */}
-            <Counter />
-            <p> </p>
-            <Counter2 />
+            {/* <Counter /> */}
+            {/* <p> </p> */}
+            {/* <Counter2 /> */}
             {/* <Emp /> */}
+            <ReduxDemo />
         </div>
     );
 }

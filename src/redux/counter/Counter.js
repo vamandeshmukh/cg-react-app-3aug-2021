@@ -6,6 +6,7 @@ const Counter = () => {
     console.log('2 Counter');
     const count = useSelector((state) => state.counter.value);
     const count2 = useSelector((state) => state.counter2.value);
+
     console.log('3 count');
     const dispatch = useDispatch();
     console.log('4 dispatch');
