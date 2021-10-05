@@ -18,8 +18,8 @@ const Home = () => {
             {/* <Counter /> */}
             <p> </p>
             {/* <Counter2 /> */}
-            {/* <Emp /> */}
-            <ReduxDemo />
+            <Emp />
+            {/* <ReduxDemo /> */}
         </div>
     );
 }

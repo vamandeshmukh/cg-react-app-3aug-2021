@@ -17,7 +17,7 @@ const ReduxDemo = () => {
     return (
         <div>
             <p>Redux Demo Component</p>
-            <button onClick={() => { dispatch(changeNum()) }} >Click here</button>
+            <button onClick={() => { dispatch(changeNum(22)) }} >Click here</button>
             <p>Output - {num} </p>
             <p>Output3 - {num03} </p>
         </div>

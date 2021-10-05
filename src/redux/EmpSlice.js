@@ -22,11 +22,11 @@ export const empSlice = createSlice({
     },
     payHike: (state, action) => {
       console.log(state.empState.salary);
-      state.empState.salary = action.payload
+      state.empState.salary = action.payload;
     },
     setFirstName: (state, action) => {
       console.log(state.empState.firstName);
-      state.empState.firstName = action.payload
+      state.empState.firstName = action.payload;
     },
   }
 })

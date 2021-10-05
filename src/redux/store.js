@@ -28,14 +28,16 @@ https://github.com/softkraftco/redux-tutorial-how-to-setup-redux
 
 console.log('0 store');
 
-const store = configureStore({
-    reducer: {
-        counter: counterReducer,
-        counter2: counter2Reducer,
-        emp: empReducer,
-        reduxDemo: reduxDemoReducer
-    },
-})
+const store = configureStore(
+    {
+        reducer: {
+            counter: counterReducer,
+            counter2: counter2Reducer,
+            emp: empReducer,
+            reduxDemo: reduxDemoReducer
+        },
+    }
+);
 export default store;
 
 

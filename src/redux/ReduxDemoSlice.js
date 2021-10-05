@@ -14,9 +14,9 @@ export const reduxDemoSlice = createSlice({
         num7: false
     },
     reducers: {
-        changeNum: (state) => {
+        changeNum: (state, action) => {
             console.log('changeNum');
-            state.num2 += 10;
+            state.num2 += action.payload;
         }
     },
 })
