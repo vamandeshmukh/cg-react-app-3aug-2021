@@ -64,7 +64,7 @@ const Emp = () => {
                     <input
                         type="number"
                         id="eid"
-                        // Add data-testid here 
+                        // Add data-testid here : jest-test  
                         data-testid="eid"
                         name="eid"
                         className="form-control mb-3"
