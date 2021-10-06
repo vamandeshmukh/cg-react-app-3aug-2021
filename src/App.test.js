@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 // guide: https://github.com/testing-library/jest-dom 
 // https://jestjs.io/docs/getting-started
 
+// check code in Emp - line 68 
 test('find eid in Emp', () => {
   render(<Provider store={store}>
     <Emp />
