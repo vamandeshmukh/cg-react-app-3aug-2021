@@ -11,26 +11,26 @@ import Footer from './components/Footer';
 import MyMedia from './components/MyMedia';
 const Routes = () => {
     return (
-        <div>
-            <Router>
-                <div>
-                    <Header />
+            <div>
+                <Router>
                     <div>
-                        <Switch>
-                            <Route exact path="/"> <Home /> </Route>
-                            <Route path="/home"> <Home /> </Route>
-                            <Route path="/sample"> <Sample /> </Route>
-                            <Route path="/javadata"> <JavaData /> </Route>
-                            <Route path="/mymedia"> <MyMedia /> </Route>
-                            <Route path="/login"> <Login /> </Route>
-                            <Route path="/register"> <Register /> </Route>
-                            <Route path="/*"> <PageNotFound /> </Route>
-                        </Switch>
+                        <Header />
+                        <div>
+                            <Switch>
+                                <Route exact path="/"> <Home /> </Route>
+                                <Route path="/home"> <Home /> </Route>
+                                <Route path="/sample"> <Sample /> </Route>
+                                <Route path="/javadata"> <JavaData /> </Route>
+                                <Route path="/mymedia"> <MyMedia /> </Route>
+                                <Route path="/login"> <Login /> </Route>
+                                <Route path="/register"> <Register /> </Route>
+                                <Route path="/*"> <PageNotFound /> </Route>
+                            </Switch>
+                        </div>
+                        {/* <Footer /> */}
                     </div>
-                    {/* <Footer /> */}
-                </div>
-            </Router>
-        </div>
+                </Router>
+            </div>
     );
 }
 export default Routes;

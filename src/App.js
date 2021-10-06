@@ -1,14 +1,28 @@
 import React from 'react';
+import store from './redux/store';
+import { Provider } from 'react-redux';
 import Routes from './Routes';
 
 const App = () => {
   return (
-    <div className="bg-light">
-      <Routes />
-    </div>
+      <div className="bg-light">
+        <Routes />
+      </div>
   );
 }
 export default App;
+
+
+// const App = () => {
+//   return (
+//     <Provider store={store}>
+//       <div className="bg-light">
+//         <Routes />
+//       </div>
+//     </Provider>
+//   );
+// }
+// export default App;
 
 // import logo from './logo.svg';
 // import './App.css';

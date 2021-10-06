@@ -34,9 +34,10 @@ const Emp = () => {
         axios.get(`http://localhost:8082/getEmp/${oneEmp.eid}`)
             .then(async (response) => {
                 await dispatch(getEmpById(response.data));
-                await setDisplayOneEmp(`${empData.eid} ${empData.firstName} ${empData.salary}`);
+                setDisplayOneEmp(`${response.data.eid} ${response.data.firstName} ${response.data.salary}`);
             }).catch(async (error) => {
-                await setDisplayOneEmp(`Employee with the id ${oneEmp.eid} not found.`);
+                // more custom error handling is required 
+                await setDisplayOneEmp(`${error.message}: Employee with the id ${oneEmp.eid} is not found.`);
             });
         evt.preventDefault();
     }
@@ -63,6 +64,8 @@ const Emp = () => {
                     <input
                         type="number"
                         id="eid"
+                        // Add data-testid here 
+                        data-testid="eid"
                         name="eid"
                         className="form-control mb-3"
                         value={oneEmp.eid}
@@ -72,6 +75,8 @@ const Emp = () => {
                     <input
                         type="submit"
                         id="submit"
+                        // Add data-testid here 
+                        data-testid="submit"
                         name="submit"
                         className="btn btn-primary mb-3"
                         value="Get Employee"
