@@ -9,4 +9,12 @@ import { Provider } from 'react-redux';
 // guide: https://github.com/testing-library/jest-dom 
 // https://jestjs.io/docs/getting-started
 
+// sample test 1
+test('test 10 == 10', () => {
+  expect(10).toBe(10);
+});
+// sample test 2
+test('test 11 == 11', () => {
+  expect(11).toBe(11);
+});
 
