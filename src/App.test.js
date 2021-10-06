@@ -11,11 +11,21 @@ import { Provider } from 'react-redux';
 
 // check code in Emp - line 68 
 test('find eid in Emp', () => {
-  render(<Provider store={store}>
+  render(
+  <Provider store={store}>
     <Emp />
-  </Provider>);
-
+  </Provider>
+  );
   expect(getByTestId(document.documentElement, 'eid')).toBeInTheDocument();
+});
+
+test('find submit in Emp', () => {
+  render(
+  <Provider store={store}>
+    <Emp />
+  </Provider>
+  );
+  expect(getByTestId(document.documentElement, 'submit')).toBeInTheDocument();
 });
 
 // sample test 1
