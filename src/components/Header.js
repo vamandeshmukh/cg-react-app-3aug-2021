@@ -36,6 +36,7 @@ const Header = () => {
                                     <Link className="nav-link" to="/mymedia" >My Media</Link>
                                 </li>
                                 <li className="nav-item">
+                                    {/* Create and Send to logout  */}
                                     <Link className="nav-link" to="/login">Logout</Link>
                                 </li>
                             </ul>
