@@ -35,10 +35,10 @@ const Login = (props) => {
         // axios.post(`http://localhost:8082/appuser/login`, AppUser)
         //     .then((response) => {
         //         console.log(response.data);
-                    history.push('/home');
-            // }).catch((error) => {
-            //     console.log(error.message)
-            // });
+        history.push('/home');
+        // }).catch((error) => {
+        //     console.log(error.message)
+        // });
         event.preventDefault();
     }
     return (
@@ -67,7 +67,6 @@ const Login = (props) => {
                             placeholder="Password"
                             value={AppUser.password}
                             onChange={handleAppUser} />
-                            required
                         <input
                             type="submit"
                             id="submit"
@@ -83,15 +82,5 @@ const Login = (props) => {
     )
 }
 export default Login;
-
-// const Login = () => {
-//     return (
-//         <div className="container" >
-//             <h1 className="display-4 text-primary">Login Component</h1>
-//             <p>This is login component.</p>
-//         </div>
-//     );
-// }
-// export default Login;
 
 
