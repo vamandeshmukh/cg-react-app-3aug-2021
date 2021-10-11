@@ -7,7 +7,7 @@ const Header = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     useEffect(() => {
-        if (isLoggedIn);
+        if (isLoggedIn); // use localStorage here 
         setIsLoggedIn(true);
     }, []);
 
