@@ -17,7 +17,7 @@ const Home = () => {
             {/* <BsStuff /> */}
             {/* <Counter /> */}
             {/* <Counter2 /> */}
-            {/* <Emp /> */}
+            <Emp />
             {/* <ReduxDemo /> */}
         </div>
     );

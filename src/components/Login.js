@@ -7,7 +7,7 @@ const Login = (props) => {
 
     const history = useHistory();
 
-    const [AppUser, setAppUser] = useState({
+    const [appUser, setAppUser] = useState({
         email: '',
         password: ''
     });
@@ -15,8 +15,8 @@ const Login = (props) => {
     useEffect(
         () => {
             setAppUser({
-                email: '',
-                password: ''
+                email: 'vaman@gmail.com',
+                password: 'vaman@gmail.com'
             }
             );
         }, []);
@@ -24,21 +24,28 @@ const Login = (props) => {
     const handleAppUser = (event) => {
         console.log(event.target.value);
         setAppUser({
-            ...AppUser,
+            ...appUser,
             [event.target.name]: event.target.value
         });
     };
 
     const submitAppUser = (event) => {
-        console.log(AppUser.email);
-        console.log(AppUser.password);
-        // axios.post(`http://localhost:8082/appuser/login`, AppUser)
-        //     .then((response) => {
-        //         console.log(response.data);
-        history.push('/home');
-        // }).catch((error) => {
-        //     console.log(error.message)
-        // });
+        if (appUser.email === 'vaman@gmail.com' && appUser.password === 'vaman@gmail.com') {
+            localStorage.setItem(appUser);
+            history.push('/home');
+        }
+        else {
+            console.log('Invalid credentials');
+        }
+        axios.post(`http://localhost:8082/appuser/login`, appUser)
+            .then((response) => {
+                console.log(response.data);
+                localStorage.setItem(appUser); // important 
+                localStorage.
+                history.push('/home');
+            }).catch((error) => {
+                console.log(error.message)
+            });
         event.preventDefault();
     }
     return (
@@ -54,7 +61,7 @@ const Login = (props) => {
                             id="email"
                             className="form-control mb-3"
                             placeholder="Email"
-                            value={AppUser.email}
+                            value={appUser.email}
                             onChange={handleAppUser}
                             required
                         />
@@ -65,7 +72,7 @@ const Login = (props) => {
                             id="password"
                             className="form-control mb-3"
                             placeholder="Password"
-                            value={AppUser.password}
+                            value={appUser.password}
                             onChange={handleAppUser} />
                         <input
                             type="submit"
